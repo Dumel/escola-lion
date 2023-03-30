@@ -704,7 +704,7 @@ const getAlunos = function() {
     return json
 }
 
-console.log(getAlunos());
+//console.log(getAlunos());
 
 const getMatricula = function(matricula) {
     const listaJSON = {}

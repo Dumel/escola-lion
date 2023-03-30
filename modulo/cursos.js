@@ -27,4 +27,8 @@ const getCursos = function () {
     return listaJSON
 }
 
-console.log(getCursos());
+//console.log(getCursos());
+
+module.exports = {
+    getCursos
+}
