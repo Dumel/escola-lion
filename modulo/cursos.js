@@ -13,18 +13,18 @@ var cursos = [
     }
 ];
 
-const getCursos = function (sigla) {
+const getCursos = function () {
     const listaJSON = {}
+    const listaArray = []
 
     cursos.forEach(function (dados) {
-        if (sigla == dados.sigla) {
-            listaJSON.sigla = dados.sigla
-            listaJSON.nome = dados.nome
-            listaJSON.icone = dados.icone
-            listaJSON.carga = dados.carga
-        }
+        
+        listaArray.push({
+           icone: dados.icone, nome: dados.nome, sigla: dados.sigla
+        })
+        listaJSON.cursos = listaArray
     })
     return listaJSON
 }
 
-//console.log(getCursos('RDS'));
+console.log(getCursos());

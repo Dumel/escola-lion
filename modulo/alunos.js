@@ -687,15 +687,85 @@ var alunos = [
  
 const getAlunos = function() {
 
+
     const json = {}
     const array = []
 
     alunos.forEach(function (dados){
-        json.foto = dados.foto
-        json.nome = dados.nome
-        json.matricula = dados.matricula
+        
+        array.push({
+            foto: dados.foto, nome: dados.nome
+        })
+
+        json.alunos = array
+        
     })
+
     return json
 }
 
 console.log(getAlunos());
+
+const getMatricula = function(matricula) {
+    const listaJSON = {}
+    const listaArray = []
+
+    alunos.forEach(function (dados){
+        if(matricula == dados.matricula) {
+            listaJSON.foto = dados.foto
+            listaJSON.nome = dados.nome
+            listaJSON.matricula = dados.matricula
+        }   
+    
+    })
+
+    return listaJSON
+}
+
+//console.log(getMatricula('20151001002'));
+
+const getAlunosCurso = function(curso) {
+    const listaJSON = {}
+    const listaArray = []
+
+    alunos.forEach(function(dados){
+        dados.curso.forEach(function(cursoData){
+            if(curso == cursoData.sigla){
+                listaArray.push({
+                    nome: dados.nome
+                })
+
+            listaJSON.alunos = listaArray
+
+            }
+        })
+    })
+    return listaJSON
+    
+}
+
+//console.log(getAlunosCurso('DS'));
+
+const getStatus = function(status){
+    const listaJSON = {}
+    const listaArray = []
+
+    alunos.forEach(function(dados){
+        if(status == dados.status){
+            listaArray.push({
+                nome: dados.nome,
+                status:dados.status
+            })
+            listaJSON.alunos = listaArray
+        }
+    })
+    return listaJSON
+}
+//console.log(getStatus('Cursando'));
+
+module.exports = {
+    getAlunos,
+    getMatricula,
+    getAlunosCurso,
+    getStatus
+}
