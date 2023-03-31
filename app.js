@@ -56,8 +56,8 @@ app.get('/v1/lion-school/alunos', cors(), async function (request, response, nex
     }
 })
 
-app.get('/v1/lion-school/alunos/:matricula', cors(), async function (request, response, next){
-    let matriculaAluno = request.params.matricula
+app.get('/v1/lion-school/alunos/numero', cors(), async function (request, response, next){
+    let matriculaAluno = request.query.matricula
     let statusCode
     let dadosMatricula = {}
 
@@ -81,8 +81,8 @@ app.get('/v1/lion-school/alunos/:matricula', cors(), async function (request, re
     response.json(dadosMatricula)
 })
 
-app.get('/v1/lion-school/alunos/curso/:curso', cors(), async function (request, response, next){
-    let cursoDoAluno = request.params.curso
+app.get('/v1/lion-school/alunos/materia', cors(), async function (request, response, next){
+    let cursoDoAluno = request.query.curso
     let statusCode
     let dadosCurso = {}
 
@@ -106,8 +106,8 @@ app.get('/v1/lion-school/alunos/curso/:curso', cors(), async function (request, 
     response.json(dadosCurso)
 })
 
-app.get('/v1/lion-school/alunos/status/:status', cors(), async function (request, response, next){
-    let statusDoAluno = request.params.status
+app.get('/v1/lion-school/alunos/estado', cors(), async function (request, response, next){
+    let statusDoAluno = request.query.status
     let statusCode
     let dadosStatus = {}
 
