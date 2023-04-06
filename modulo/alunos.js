@@ -720,6 +720,7 @@ const getMatricula = function (matricula) {
             listaJSON.sexo = dados.sexo
             listaJSON.matricula = dados.matricula
             listaJSON.curso = dados.curso
+            listaJSON.status = dados.status
 
         }
 
