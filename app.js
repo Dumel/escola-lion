@@ -22,7 +22,7 @@ const app = express()
 
 app.use((request, response, next) => {
 
-    response.header('Acess-Control-Allow-Origin', '*')
+    response.header('Access-Control-Allow-Origin', '*')
 
     response.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
 
